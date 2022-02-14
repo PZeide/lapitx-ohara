@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+
+  "name": "Lapitx Ohara",
+  "description": "Fonctionnalités supplémentaires pour le serveur Lapitx Mutus",
+  "authors": [
+    "Zeide"
+  ],
+  "contact": {
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "com.zeide.lapitxohara.LapitxOharaMod"
+    ]
+  },
+  "mixins": [
+    "lapitx-ohara.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}"
+  }
+}
