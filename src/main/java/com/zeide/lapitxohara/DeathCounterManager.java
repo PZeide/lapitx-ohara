@@ -30,9 +30,9 @@ public class DeathCounterManager {
                     new LiteralText("Compteur de morts").setStyle(Style.EMPTY.withColor(Formatting.GOLD)),
                     ScoreboardCriterion.RenderType.INTEGER
             );
-
-            scoreboard.setObjectiveSlot(Scoreboard.SIDEBAR_DISPLAY_SLOT_ID, objective);
         }
+
+        scoreboard.setObjectiveSlot(Scoreboard.LIST_DISPLAY_SLOT_ID, objective);
     }
 
     public void retrieveStatDataIfPresent(ServerPlayerEntity player) {

@@ -15,6 +15,7 @@ public class LapitxOharaMod implements DedicatedServerModInitializer {
 
     private LapitxOharaConfig config;
     private DeathCounterManager deathCounterManager;
+    private HealthDisplayManager healthDisplayManager;
 
     @Override
     public void onInitializeServer() {
@@ -24,6 +25,9 @@ public class LapitxOharaMod implements DedicatedServerModInitializer {
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
             deathCounterManager = new DeathCounterManager(server);
             deathCounterManager.initializeScoreboard();
+
+            healthDisplayManager = new HealthDisplayManager(server);
+            healthDisplayManager.initializeScoreboard();
         });
 
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
@@ -41,5 +45,9 @@ public class LapitxOharaMod implements DedicatedServerModInitializer {
 
     public DeathCounterManager getDeathCounterManager() {
         return deathCounterManager;
+    }
+
+    public HealthDisplayManager getHealthDisplayManager() {
+        return healthDisplayManager;
     }
 }
